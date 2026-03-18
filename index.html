@@ -1,9 +1,14 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Devang | Premium Links</title><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"><style>
+<title>Devang | Premium Links</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{
 font-family:'Poppins',sans-serif;
@@ -16,7 +21,6 @@ color:white;
 overflow:hidden;
 }
 
-/* glowing background blobs */
 body::before,body::after{
 content:"";
 position:absolute;
@@ -35,6 +39,111 @@ width:100%;
 max-width:420px;
 padding:25px;
 text-align:center;
+backdrop-filter:blur(20px);
+border-radius:25px;
+border:1px solid rgba(255,255,255,0.1);
+box-shadow:0 20px 60px rgba(0,0,0,0.6);
+}
+
+.profile-pic{
+width:110px;height:110px;
+border-radius:50%;
+border:3px solid #22c55e;
+margin-bottom:15px;
+transition:.3s;
+}
+.profile-pic:hover{transform:scale(1.08)}
+
+.name{font-size:2rem;font-weight:700}
+.handle{opacity:.7;margin-bottom:25px}
+
+.links{display:flex;flex-direction:column;gap:14px}
+
+.btn{
+display:flex;justify-content:space-between;align-items:center;
+padding:16px 20px;
+border-radius:14px;
+text-decoration:none;color:white;
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.1);
+transition:.3s;
+position:relative;
+overflow:hidden;
+}
+
+.btn::before{
+content:"";
+position:absolute;
+width:100%;height:100%;
+background:linear-gradient(120deg,transparent,rgba(255,255,255,0.3),transparent);
+top:0;left:-100%;
+transition:.5s;
+}
+.btn:hover::before{left:100%}
+
+.btn:hover{
+transform:translateY(-4px);
+border-color:#22c55e;
+box-shadow:0 10px 25px rgba(34,197,94,0.3);
+}
+
+.left{display:flex;gap:12px;align-items:center}
+.footer{margin-top:25px;font-size:.8rem;opacity:.5}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<img src="https://drive.google.com/uc?export=view&id=14ZGJ15cPmNrUH-xFkfpu0StbfjFEvveq" class="profile-pic">
+
+<h1 class="name">Devang</h1>
+<p class="handle">Gamer 🎮</p>
+
+<div class="links">
+
+<a href="https://instagram.com/devang_ks" class="btn">
+<div class="left"><i class="fa-brands fa-instagram"></i>Instagram</div>
+<i class="fa-solid fa-arrow-right"></i>
+</a>
+
+<a href="https://youtube.com/@devang_ks" class="btn">
+<div class="left"><i class="fa-brands fa-youtube"></i>YouTube</div>
+<i class="fa-solid fa-arrow-right"></i>
+</a>
+
+<a href="https://open.spotify.com/user/313yqn4t66lnfcz5sosdmd36ktly" class="btn">
+<div class="left"><i class="fa-brands fa-spotify"></i>Spotify</div>
+<i class="fa-solid fa-arrow-right"></i>
+</a>
+
+<a href="https://tracker.gg/valorant/profile/riot/devang%23meow/overview" class="btn">
+<div class="left"><i class="fa-solid fa-gamepad"></i>Riot (Valorant)</div>
+<i class="fa-solid fa-arrow-right"></i>
+</a>
+
+<a href="https://discord.com/users/devang_ks" class="btn">
+<div class="left"><i class="fa-brands fa-discord"></i>Discord</div>
+<i class="fa-solid fa-arrow-right"></i>
+</a>
+
+<a href="https://t.me/Devang_ks" class="btn">
+<div class="left"><i class="fa-brands fa-telegram"></i>Telegram</div>
+<i class="fa-solid fa-arrow-right"></i>
+</a>
+
+<a href="https://wa.me/15094282645" class="btn">
+<div class="left"><i class="fa-brands fa-whatsapp"></i>WhatsApp</div>
+<i class="fa-solid fa-arrow-right"></i>
+</a>
+
+</div>
+
+<div class="footer">⚡ Made by Devang</div>
+
+</div>
+</body>
+</html>text-align:center;
 backdrop-filter:blur(20px);
 border-radius:25px;
 border:1px solid rgba(255,255,255,0.1);
