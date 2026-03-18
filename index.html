@@ -10,138 +10,101 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-
 body{
-font-family:'Poppins',sans-serif;
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-color:white;
-overflow:hidden;
-background:black;
+  font-family:'Poppins',sans-serif;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
+  overflow:hidden;
+  background:#000;
+  position:relative;
 }
 
-/* 🎬 VIDEO BACKGROUND */
-#bg-video{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-object-fit:cover;
-z-index:-2;
-}
-
-/* 🌫️ LIGHT OVERLAY */
-.overlay{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.25);
-z-index:-1;
+/* 🌌 PARTICLES CANVAS */
+#particles-js{
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  z-index:-1;
 }
 
 /* container */
 .container{
-width:100%;
-max-width:420px;
-padding:25px;
-text-align:center;
-backdrop-filter:blur(20px);
-border-radius:25px;
-border:1px solid rgba(255,255,255,0.1);
-box-shadow:0 20px 60px rgba(0,0,0,0.6);
-animation:fadeIn 1s ease;
+  width:100%;
+  max-width:420px;
+  padding:25px;
+  text-align:center;
+  backdrop-filter:blur(20px);
+  border-radius:25px;
+  border:1px solid rgba(255,255,255,0.1);
+  box-shadow:0 20px 60px rgba(0,0,0,0.6);
+  animation:fadeIn 1s ease;
 }
 
 /* profile */
-.profile-pic {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
+.profile-pic{
+  width:110px;
+  height:110px;
+  border-radius:50%;
   border: 3px solid #1e90ff; /* blue border */
-  margin-bottom: 12px;
-  transition: .3s;
+  margin-bottom:12px;
+  transition:.3s;
 }
 .profile-pic:hover{
-transform:scale(1.08);
+  transform:scale(1.08);
 }
 
-h1{
-font-size:2rem;
-font-weight:700;
-}
-
-p{
-opacity:0.7;
-margin-bottom:20px;
-}
+h1{font-size:2rem;font-weight:700}
+p{opacity:0.7;margin-bottom:20px}
 
 /* links */
 .links{
-display:flex;
-flex-direction:column;
-gap:12px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
 }
 
 .btn{
-padding:14px 18px;
-border-radius:14px;
-background:rgba(255,255,255,0.08);
-text-decoration:none;
-color:white;
-display:flex;
-justify-content:space-between;
-align-items:center;
-transition:.3s;
-font-weight:500;
-backdrop-filter:blur(10px);
+  padding:14px 18px;
+  border-radius:14px;
+  background:rgba(255,255,255,0.08);
+  text-decoration:none;
+  color:white;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  transition:.3s;
+  font-weight:500;
+  backdrop-filter:blur(10px);
 }
-
 .btn:hover{
-transform:translateY(-4px) scale(1.02);
-box-shadow:0 10px 25px rgba(0,0,0,0.6);
-background:rgba(255,255,255,0.15);
+  transform:translateY(-4px) scale(1.02);
+  box-shadow:0 10px 25px rgba(0,0,0,0.6);
+  background:rgba(255,255,255,0.15);
 }
-
-.left{
-display:flex;
-align-items:center;
-gap:10px;
-}
-
+.left{display:flex;align-items:center;gap:10px}
 .arrow{transition:.3s}
 .btn:hover .arrow{transform:translateX(6px)}
 
 @keyframes fadeIn{
-from{opacity:0; transform:translateY(20px)}
-to{opacity:1; transform:translateY(0)}
+  from{opacity:0; transform:translateY(20px)}
+  to{opacity:1; transform:translateY(0)}
 }
-
 </style>
 </head>
-
 <body>
 
-<!-- 🎬 VIDEO BACKGROUND -->
-<video autoplay muted loop id="bg-video">
-  <source src="bg.mp4" type="video/mp4">
-</video>
-
-<div class="overlay"></div>
+<!-- 🌌 PARTICLES -->
+<div id="particles-js"></div>
 
 <div class="container">
-
 <img src="pfp.jpg" class="profile-pic">
-
 <h1>Devang</h1>
 <p>Gamer 🎮</p>
 
 <div class="links">
-
 <a href="https://instagram.com/devang_ks" target="_blank" class="btn">
 <div class="left"><i class="fa-brands fa-instagram"></i> Instagram</div>
 <i class="fa-solid fa-arrow-right arrow"></i>
@@ -176,10 +139,29 @@ to{opacity:1; transform:translateY(0)}
 <div class="left"><i class="fa-brands fa-snapchat"></i> Snapchat</div>
 <i class="fa-solid fa-arrow-right arrow"></i>
 </a>
-
+</div>
 </div>
 
-</div>
+<!-- Particles JS -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+particlesJS("particles-js", {
+  "particles": {
+    "number": {"value": 120,"density":{"enable":true,"value_area":800}},
+    "color": {"value":"#ffffff"},
+    "shape":{"type":"circle"},
+    "opacity":{"value":0.5,"random":true},
+    "size":{"value":2,"random":true},
+    "line_linked":{"enable":true,"distance":120,"color":"#ffffff","opacity":0.2,"width":1},
+    "move":{"enable":true,"speed":2,"direction":"none","random":true,"straight":false,"out_mode":"out","bounce":false}
+  },
+  "interactivity": {
+    "detect_on":"canvas",
+    "events":{"onhover":{"enable":true,"mode":"grab"},"onclick":{"enable":true,"mode":"push"}}
+  },
+  "retina_detect":true
+});
+</script>
 
 </body>
 </html>
